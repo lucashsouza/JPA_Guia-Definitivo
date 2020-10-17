@@ -57,4 +57,19 @@ public class Veiculo {
     public void setValor(BigDecimal valor) {
         this.valor = valor;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Veiculo veiculo = (Veiculo) o;
+
+        return getCodigo().equals(veiculo.getCodigo());
+    }
+
+    @Override
+    public int hashCode() {
+        return getCodigo().hashCode();
+    }
 }
