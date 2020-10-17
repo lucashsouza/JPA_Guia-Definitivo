@@ -4,16 +4,25 @@ import javax.persistence.*;
 import java.math.BigDecimal;
 
 @Entity
+@Table(name = "tab_veiculo")
 public class Veiculo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
 
-    @Column
+    @Column(length = 60, nullable = false)
     private String fabricante;
+
+    @Column(length = 60, nullable = false)
     private String modelo;
+
+    @Column(name = "ano_fabricacao", nullable = false)
     private Integer anoFabricacao;
+
+    @Column(name = "ano_modelo", nullable = false)
     private Integer anoModelo;
+
+    @Column(precision = 10, scale = 2, nullable = true)
     private BigDecimal valor;
 
     public Long getCodigo() {
