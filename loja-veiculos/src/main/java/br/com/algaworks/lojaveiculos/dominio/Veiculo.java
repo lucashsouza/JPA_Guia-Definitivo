@@ -1,9 +1,15 @@
 package br.com.algaworks.lojaveiculos.dominio;
 
+import javax.persistence.*;
 import java.math.BigDecimal;
 
+@Entity
 public class Veiculo {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long codigo;
+
+    @Column
     private String fabricante;
     private String modelo;
     private Integer anoFabricacao;
