@@ -35,6 +35,9 @@ public class Veiculo {
     @Column(name = "data_cadastro", nullable = false)
     private Date dataCadastro;
 
+    @Transient
+    private String descricaoCompleta;
+
     public VeiculoId getCodigo() {
         return codigo;
     }
@@ -97,6 +100,14 @@ public class Veiculo {
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
+    }
+
+    public String getDescricaoCompleta() {
+        return descricaoCompleta;
+    }
+
+    public void setDescricaoCompleta(String descricaoCompleta) {
+        this.descricaoCompleta = descricaoCompleta;
     }
 
     @Override
