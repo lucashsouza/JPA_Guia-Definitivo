@@ -8,6 +8,9 @@ import br.com.algaworks.lojaveiculos.util.JpaUtil;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.math.BigDecimal;
+import java.time.Instant;
+import java.time.LocalDate;
+import java.util.Date;
 
 public class PersistindoVeiculo {
     public static void main(String[] args) {
@@ -26,6 +29,7 @@ public class PersistindoVeiculo {
         veiculo.setAnoModelo(2020);
         veiculo.setValor(new BigDecimal(90500));
         veiculo.setTipoCombustivel(TipoCombustivel.GASOLINA);
+        veiculo.setDataCadastro(new Date());
 
         // Persistencia no banco de dados
         em.persist(veiculo);

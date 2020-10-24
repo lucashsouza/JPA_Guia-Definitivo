@@ -2,6 +2,8 @@ package br.com.algaworks.lojaveiculos.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
+import java.util.Date;
 
 @Entity
 @Table(name = "tab_veiculo")
@@ -28,6 +30,10 @@ public class Veiculo {
     @Column(name = "tipo_combustivel")
     @Enumerated(EnumType.STRING)
     private TipoCombustivel tipoCombustivel;
+
+    @Temporal(TemporalType.DATE)
+    @Column(name = "data_cadastro", nullable = false)
+    private Date dataCadastro;
 
     public VeiculoId getCodigo() {
         return codigo;
@@ -83,6 +89,14 @@ public class Veiculo {
 
     public void setTipoCombustivel(TipoCombustivel tipoCombustivel) {
         this.tipoCombustivel = tipoCombustivel;
+    }
+
+    public Date getDataCadastro() {
+        return dataCadastro;
+    }
+
+    public void setDataCadastro(Date dataCadastro) {
+        this.dataCadastro = dataCadastro;
     }
 
     @Override
