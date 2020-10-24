@@ -1,10 +1,10 @@
 package br.com.algaworks.lojaveiculos.dao;
 
-import br.com.algaworks.lojaveiculos.dominio.Veiculo;
+import br.com.algaworks.lojaveiculos.model.Veiculo;
+import br.com.algaworks.lojaveiculos.model.VeiculoId;
 import br.com.algaworks.lojaveiculos.util.JpaUtil;
 
 import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import java.math.BigDecimal;
 
@@ -14,7 +14,8 @@ public class AtualizandoVeiculo {
         EntityTransaction et = em.getTransaction();
         et.begin();
 
-        Veiculo veiculo = em.find(Veiculo.class, 1L);
+        VeiculoId codigo = new VeiculoId("AAA-1111", "São Paulo - SP");
+        Veiculo veiculo = em.find(Veiculo.class, codigo);
 
         System.out.println("Valor atual: " + veiculo.getValor());
         veiculo.setValor(veiculo.getValor().subtract(new BigDecimal(500)));

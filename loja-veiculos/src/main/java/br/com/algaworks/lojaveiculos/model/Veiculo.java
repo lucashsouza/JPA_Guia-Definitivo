@@ -1,4 +1,4 @@
-package br.com.algaworks.lojaveiculos.dominio;
+package br.com.algaworks.lojaveiculos.model;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
@@ -6,9 +6,9 @@ import java.math.BigDecimal;
 @Entity
 @Table(name = "tab_veiculo")
 public class Veiculo {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long codigo;
+
+    @EmbeddedId
+    private VeiculoId codigo;
 
     @Column(length = 60, nullable = false)
     private String fabricante;
@@ -25,11 +25,11 @@ public class Veiculo {
     @Column(precision = 10, scale = 2, nullable = true)
     private BigDecimal valor;
 
-    public Long getCodigo() {
+    public VeiculoId getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Long codigo) {
+    public void setCodigo(VeiculoId codigo) {
         this.codigo = codigo;
     }
 
