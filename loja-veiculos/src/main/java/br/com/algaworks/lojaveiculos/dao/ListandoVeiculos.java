@@ -1,6 +1,6 @@
 package br.com.algaworks.lojaveiculos.dao;
 
-import br.com.algaworks.lojaveiculos.dominio.Veiculo;
+import br.com.algaworks.lojaveiculos.model.Veiculo;
 import br.com.algaworks.lojaveiculos.util.JpaUtil;
 
 import javax.persistence.EntityManager;
@@ -16,7 +16,8 @@ public class ListandoVeiculos {
 
         for (Veiculo veiculo : veiculos){
             StringBuilder sb = new StringBuilder();
-            sb.append("Código: " + veiculo.getCodigo() + "\n");
+            sb.append("Placa: " + veiculo.getCodigo().getPlaca() + "\n");
+            sb.append("Cidade: " + veiculo.getCodigo().getCidade() + "\n");
             sb.append("Fabricante: " + veiculo.getFabricante() + "\n");
             sb.append("Modelo: " + veiculo.getModelo() + " " + veiculo.getAnoModelo() +"\n");
             sb.append("Ano de Fabricação: " + veiculo.getAnoFabricacao() + "\n");

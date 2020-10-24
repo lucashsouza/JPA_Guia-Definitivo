@@ -1,6 +1,7 @@
 package br.com.algaworks.lojaveiculos.dao;
 
-import br.com.algaworks.lojaveiculos.dominio.Veiculo;
+import br.com.algaworks.lojaveiculos.model.Veiculo;
+import br.com.algaworks.lojaveiculos.model.VeiculoId;
 import br.com.algaworks.lojaveiculos.util.JpaUtil;
 
 import javax.persistence.EntityManager;
@@ -17,6 +18,7 @@ public class PersistindoVeiculo {
         et.begin();
 
         Veiculo veiculo = new Veiculo();
+        veiculo.setCodigo(new VeiculoId("DDD-4444", "Jundiaí-SP"));
         veiculo.setFabricante("Honda");
         veiculo.setModelo("Civic");
         veiculo.setAnoFabricacao(2020);
