@@ -21,6 +21,13 @@ public class PersistindoVeiculo {
         EntityTransaction et = em.getTransaction();
         et.begin();
 
+        StringBuilder especificacoes = new StringBuilder();
+        especificacoes.append("Carro em excelente estado.\n");
+        especificacoes.append("Completo, menos ar.\n");
+        especificacoes.append("Primeiro dono, com manual de instrução ");
+        especificacoes.append("e todas as revisões feitas.\n");
+        especificacoes.append("IPVA pago, aceita financiamento.");
+
         Veiculo veiculo = new Veiculo();
         veiculo.setCodigo(new VeiculoId("DDD-4444", "Jundiaí-SP"));
         veiculo.setFabricante("Honda");
@@ -30,6 +37,7 @@ public class PersistindoVeiculo {
         veiculo.setValor(new BigDecimal(90500));
         veiculo.setTipoCombustivel(TipoCombustivel.GASOLINA);
         veiculo.setDataCadastro(new Date());
+        veiculo.setEspecificacoes(especificacoes.toString());
 
         // Persistencia no banco de dados
         em.persist(veiculo);

@@ -20,6 +20,7 @@ public class BuscandoVeiculo2 {
         sb.append("Placa: " + veiculo.getCodigo().getPlaca() + "\n");
         sb.append("Cidade: " + veiculo.getCodigo().getCidade() + "\n");
         sb.append("Modelo: " + veiculo.getModelo() + "\n");
+        sb.append("\nEspeficicações: " + veiculo.getEspecificacoes() + "\n");
         sb.append("============================");
 
         System.out.println(sb);

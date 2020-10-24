@@ -35,8 +35,16 @@ public class Veiculo {
     @Column(name = "data_cadastro", nullable = false)
     private Date dataCadastro;
 
+    // Descricao não será persistida
     @Transient
     private String descricaoCompleta;
+
+    // Texto longo
+    @Lob
+    private String especificacoes;
+
+    @Lob
+    private byte[] foto;
 
     public VeiculoId getCodigo() {
         return codigo;
@@ -108,6 +116,22 @@ public class Veiculo {
 
     public void setDescricaoCompleta(String descricaoCompleta) {
         this.descricaoCompleta = descricaoCompleta;
+    }
+
+    public String getEspecificacoes() {
+        return especificacoes;
+    }
+
+    public void setEspecificacoes(String especificacoes) {
+        this.especificacoes = especificacoes;
+    }
+
+    public byte[] getFoto() {
+        return foto;
+    }
+
+    public void setFoto(byte[] foto) {
+        this.foto = foto;
     }
 
     @Override
