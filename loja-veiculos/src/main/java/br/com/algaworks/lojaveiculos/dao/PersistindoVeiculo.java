@@ -1,5 +1,6 @@
 package br.com.algaworks.lojaveiculos.dao;
 
+import br.com.algaworks.lojaveiculos.model.TipoCombustivel;
 import br.com.algaworks.lojaveiculos.model.Veiculo;
 import br.com.algaworks.lojaveiculos.model.VeiculoId;
 import br.com.algaworks.lojaveiculos.util.JpaUtil;
@@ -24,6 +25,7 @@ public class PersistindoVeiculo {
         veiculo.setAnoFabricacao(2020);
         veiculo.setAnoModelo(2020);
         veiculo.setValor(new BigDecimal(90500));
+        veiculo.setTipoCombustivel(TipoCombustivel.GASOLINA);
 
         // Persistencia no banco de dados
         em.persist(veiculo);

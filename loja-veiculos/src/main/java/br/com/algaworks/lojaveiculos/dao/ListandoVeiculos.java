@@ -22,6 +22,7 @@ public class ListandoVeiculos {
             sb.append("Modelo: " + veiculo.getModelo() + " " + veiculo.getAnoModelo() +"\n");
             sb.append("Ano de Fabricação: " + veiculo.getAnoFabricacao() + "\n");
             sb.append("Valor: R$" + veiculo.getValor() + "\n");
+            sb.append("Tipo de combustivel: " + veiculo.getTipoCombustivel() + "\n");
 
             System.out.println(sb);
         }
