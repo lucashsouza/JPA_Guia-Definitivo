@@ -22,6 +22,8 @@ public class BuscandoVeiculo3 {
         sb.append("Cidade: " + veiculo.getCodigo().getCidade() + "\n");
         sb.append("Modelo: " + veiculo.getModelo() + "\n");
         sb.append("\nEspeficicações: " + veiculo.getEspecificacoes() + "\n");
+        sb.append("Proprietário: " + veiculo.getProprietario().getNome() + "\n");
+        sb.append("Telefone: " + veiculo.getProprietario().getTelefone() + "\n");
         sb.append("============================");
 
         System.out.println(sb);

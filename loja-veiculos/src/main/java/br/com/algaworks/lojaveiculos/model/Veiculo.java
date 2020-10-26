@@ -43,8 +43,12 @@ public class Veiculo {
     @Lob
     private String especificacoes;
 
+    // Imagem em png
     @Lob
     private byte[] foto;
+
+    @Embedded
+    private Proprietario proprietario;
 
     public VeiculoId getCodigo() {
         return codigo;
@@ -132,6 +136,14 @@ public class Veiculo {
 
     public void setFoto(byte[] foto) {
         this.foto = foto;
+    }
+
+    public Proprietario getProprietario() {
+        return proprietario;
+    }
+
+    public void setProprietario(Proprietario proprietario) {
+        this.proprietario = proprietario;
     }
 
     @Override

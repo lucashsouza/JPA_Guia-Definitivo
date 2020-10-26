@@ -1,5 +1,6 @@
 package br.com.algaworks.lojaveiculos.dao;
 
+import br.com.algaworks.lojaveiculos.model.Proprietario;
 import br.com.algaworks.lojaveiculos.model.TipoCombustivel;
 import br.com.algaworks.lojaveiculos.model.Veiculo;
 import br.com.algaworks.lojaveiculos.model.VeiculoId;
@@ -28,6 +29,10 @@ public class PersistindoVeiculo {
         especificacoes.append("e todas as revisões feitas.\n");
         especificacoes.append("IPVA pago, aceita financiamento.");
 
+        Proprietario proprietario = new Proprietario();
+        proprietario.setNome("João");
+        proprietario.setTelefone("(31) 91234-5678");
+
         Veiculo veiculo = new Veiculo();
         veiculo.setCodigo(new VeiculoId("DDD-4444", "Jundiaí-SP"));
         veiculo.setFabricante("Honda");
@@ -38,6 +43,7 @@ public class PersistindoVeiculo {
         veiculo.setTipoCombustivel(TipoCombustivel.GASOLINA);
         veiculo.setDataCadastro(new Date());
         veiculo.setEspecificacoes(especificacoes.toString());
+        veiculo.setProprietario(proprietario);
 
         // Persistencia no banco de dados
         em.persist(veiculo);
