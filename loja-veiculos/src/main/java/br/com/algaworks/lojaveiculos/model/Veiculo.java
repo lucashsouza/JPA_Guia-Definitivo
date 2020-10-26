@@ -47,7 +47,8 @@ public class Veiculo {
     @Lob
     private byte[] foto;
 
-    @Embedded
+    @OneToOne(optional = false)
+    @JoinColumn(name = "cod_proprietario")
     private Proprietario proprietario;
 
     public VeiculoId getCodigo() {

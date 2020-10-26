@@ -1,19 +1,35 @@
 package br.com.algaworks.lojaveiculos.model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import javax.persistence.*;
 
-@Embeddable
+@Entity
+@Table (name = "proprietario")
 public class Proprietario {
 
-    @Column(name = "nome_proprietario", nullable = false)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long codigo;
+
+    @Column(length = 60, nullable = false)
     private String nome;
 
-    @Column(name = "telefone_proprietario", nullable = false)
+    @Column(length = 20, nullable = false)
     private String telefone;
 
-    @Column(name = "email_proprietario")
+    @Column(length = 255)
     private String email;
+
+    // nome da propriedade na classe Veiculo que associa com Proprietario .
+    @OneToOne(mappedBy = "proprietario")
+    private Veiculo veiculo;
+
+    public Long getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(Long codigo) {
+        this.codigo = codigo;
+    }
 
     public String getNome() {
         return nome;
@@ -37,5 +53,28 @@ public class Proprietario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Veiculo getVeiculo() {
+        return veiculo;
+    }
+
+    public void setVeiculo(Veiculo veiculo) {
+        this.veiculo = veiculo;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Proprietario that = (Proprietario) o;
+
+        return getCodigo().equals(that.getCodigo());
+    }
+
+    @Override
+    public int hashCode() {
+        return getCodigo().hashCode();
     }
 }

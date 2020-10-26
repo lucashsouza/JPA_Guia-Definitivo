@@ -33,6 +33,9 @@ public class PersistindoVeiculo {
         proprietario.setNome("João");
         proprietario.setTelefone("(31) 91234-5678");
 
+        // Persistencia na tabela "proprietario"
+        em.persist(proprietario);
+
         Veiculo veiculo = new Veiculo();
         veiculo.setCodigo(new VeiculoId("DDD-4444", "Jundiaí-SP"));
         veiculo.setFabricante("Honda");
@@ -45,7 +48,7 @@ public class PersistindoVeiculo {
         veiculo.setEspecificacoes(especificacoes.toString());
         veiculo.setProprietario(proprietario);
 
-        // Persistencia no banco de dados
+        // Persistencia na tabela "tab_veiculo"
         em.persist(veiculo);
 
         // Commit para efetuar transação
