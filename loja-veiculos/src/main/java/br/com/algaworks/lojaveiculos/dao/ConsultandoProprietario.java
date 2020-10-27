@@ -11,8 +11,8 @@ public class ConsultandoProprietario {
 
         Proprietario proprietario = em.find(Proprietario.class, 1L);
 
-        System.out.println(proprietario.getVeiculo().getModelo() + " - "
-                + proprietario.getNome());
+        System.out.println(proprietario.getNome() + " - "
+                + proprietario.getTelefone());
 
         em.close();
         JpaUtil.close();

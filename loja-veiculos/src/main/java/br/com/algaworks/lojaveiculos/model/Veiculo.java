@@ -47,7 +47,7 @@ public class Veiculo {
     @Lob
     private byte[] foto;
 
-    @OneToOne(optional = false)
+    @ManyToOne
     @JoinColumn(name = "cod_proprietario")
     private Proprietario proprietario;
 

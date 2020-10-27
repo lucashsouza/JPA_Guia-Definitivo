@@ -9,8 +9,6 @@ import br.com.algaworks.lojaveiculos.util.JpaUtil;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import java.math.BigDecimal;
-import java.time.Instant;
-import java.time.LocalDate;
 import java.util.Date;
 
 public class PersistindoVeiculo {
