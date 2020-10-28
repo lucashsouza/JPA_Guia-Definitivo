@@ -1,6 +1,7 @@
 package br.com.algaworks.lojaveiculos.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table (name = "proprietario")
@@ -18,7 +19,9 @@ public class Proprietario {
 
     @Column(length = 255)
     private String email;
-
+    
+    @OneToMany(mappedBy = "proprietario")
+    private List<Veiculo> veiculos;
 
     public Long getCodigo() {
         return codigo;
@@ -50,6 +53,14 @@ public class Proprietario {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
+    }
+
+    public void setVeiculos(List<Veiculo> veiculos) {
+        this.veiculos = veiculos;
     }
 
     @Override
