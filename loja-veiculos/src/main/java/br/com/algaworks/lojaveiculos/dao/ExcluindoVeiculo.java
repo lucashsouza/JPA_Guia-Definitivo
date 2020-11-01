@@ -1,6 +1,7 @@
 package br.com.algaworks.lojaveiculos.dao;
 
 import br.com.algaworks.lojaveiculos.model.Veiculo;
+import br.com.algaworks.lojaveiculos.model.VeiculoId;
 import br.com.algaworks.lojaveiculos.util.JpaUtil;
 
 import javax.persistence.EntityManager;
@@ -12,7 +13,8 @@ public class ExcluindoVeiculo {
         EntityTransaction et = em.getTransaction();
         et.begin();
 
-        Veiculo veiculo = em.find(Veiculo.class, 1L);
+        VeiculoId codigo = new VeiculoId("AAA-1111", "São Paulo - SP");
+        Veiculo veiculo = em.find(Veiculo.class, codigo);
         em.remove(veiculo);
 
         et.commit();
